@@ -1,9 +1,8 @@
 [package]
 name = "modify"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
-authors = ["Patrick Hoffmann"]
-email = ["p.hoffmann@berlin.de"]
+authors = ["Patrick Hoffmann <p.hoffmann@berlin.de>"]
 repository = "https://github.com/fightling/modify.git"
 license = "MIT OR Apache-2.0"
 description = "A library to track changes of a value."

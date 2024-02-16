@@ -1,5 +1,8 @@
 //! Adds a modify flag to an object.
 
+#[cfg(test)]
+mod tests;
+
 use std::{
     fmt::Display,
     ops::{Deref, DerefMut},
@@ -27,11 +30,12 @@ pub trait Modifiable {
 /// value.saved();
 /// assert_eq!(value.is_modified(), false);
 /// ```
+/// if you use serde you should use `#[serde(flatten)}` for your
+/// `Modify<>` attribute  to avoid the extra level of indirection.
 #[derive(Default, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Modify<T> {
     /// Value of the object
-    #[cfg_attr(feature = "serde", serde(flatten))]
     value: T,
     /// Flag that is `true` if the object was modified.
     #[cfg_attr(feature = "serde", serde(skip))]

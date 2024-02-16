@@ -1,6 +1,6 @@
 [package]
 name = "modify"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Patrick Hoffmann <p.hoffmann@berlin.de>"]
 repository = "https://github.com/fightling/modify.git"
@@ -11,6 +11,9 @@ description = "A library to track changes of a value."
 
 [dependencies]
 serde = { version = "1.0", features = ["derive", "std"], optional = true }
+serde_json = { version = "1.0", optional = true }
 
 [features]
+default = ["serde", "serde_json"]
 serde = ["dep:serde"]
+serde_json = ["dep:serde_json"]

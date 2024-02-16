@@ -12,7 +12,7 @@ Technical implements `Deref` and `DerefMut` to access the value.
 ## Example
 
  ```rs
- use crate::modify::*;
+use crate::modify::*;
 
 // create new Modify with a 42 in it
 let mut value = Modify::new(42);

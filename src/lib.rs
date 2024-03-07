@@ -33,7 +33,7 @@ pub trait Modifiable {
 /// if you use serde you should use `#[serde(flatten)}` for your
 /// `Modify<>` attribute  to avoid the extra level of indirection.
 #[derive(Default, Debug, PartialEq)]
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize), serde(transparent))]
 pub struct Modify<T> {
     /// Value of the object
     value: T,
